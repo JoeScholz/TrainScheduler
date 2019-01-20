@@ -1,0 +1,95 @@
+<<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <!-- moment.js? -->
+    <title>TrainScheduler</title>
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Fluid jumbotron</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
+      <div class="container container-content">
+        <form>
+                <div class="card">
+                        <div class="card-header">
+                          Featured
+                        </div>
+                        <div class="trainInfo">
+                           <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>        
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                            <h5 class="card-header">Featured</h5>
+                            <div class="card-body">
+                                    <form>
+                                            <div class="form-group">
+                                              <label for="formGroupExampleInput">Train Name</label>
+                                              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="formGroupExampleInput2">Destination</label>
+                                              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="formGroupExampleInput">First TrainTime (HH:mm-Military Time)</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="formGroupExampleInput2">Frequency (min)</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                                  </div>
+                                          </form>
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                          </div>
+            
+          </form>
+
+      </div>
+
+
+    <script src="assets/js/logic.js"></script>
+</body>
+</html>
