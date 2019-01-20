@@ -25,14 +25,15 @@
                         <div class="card-header">
                           Featured
                         </div>
-                        <div class="trainInfo">
+                        <div class="train-table">
                            <table class="table table-striped">
                                     <thead>
                                       <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Tain Name</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Frequency (min)</th>
+                                        <th scope="col">Next Arrival</th>
+                                        <th scope="col">Minuets Away</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -66,22 +67,22 @@
                                     <form>
                                             <div class="form-group">
                                               <label for="formGroupExampleInput">Train Name</label>
-                                              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                              <input type="text" class="form-control" id="train-name" placeholder="">
                                             </div>
                                             <div class="form-group">
                                               <label for="formGroupExampleInput2">Destination</label>
-                                              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                              <input type="text" class="form-control" id="destination" placeholder="">
                                             </div>
                                             <div class="form-group">
-                                                    <label for="formGroupExampleInput">First TrainTime (HH:mm-Military Time)</label>
-                                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                                                    <label for="formGroupExampleInput">First Train Time (HH:mm-Military Time)</label>
+                                                    <input type="text" class="form-control" id="first-train" placeholder="">
                                                   </div>
                                                   <div class="form-group">
                                                     <label for="formGroupExampleInput2">Frequency (min)</label>
-                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                                                    <input type="text" class="form-control" id="frequency-train" placeholder="">
                                                   </div>
                                           </form>
-                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                          <button type="submit" class="btn btn-primary" id="train-submit">Submit</button>
                             </div>
                           </div>
             

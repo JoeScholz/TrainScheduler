@@ -8,6 +8,38 @@ var config = {
   };
   firebase.initializeApp(config);
 
-//   database variable for ease of reference
-
+//  Database variable for ease of reference
   var database = firebase.database();
+
+//  Button to add train info
+$("#train-sumbit").on("click", function(event) {
+  event.preventDefault();
+
+//  Varibles to grab user input
+  var trainName = $("#train-name").val().trim();
+  var destination = $("#destination").val().trim();
+//  ???MOMENT???
+  var firstTrain = $("#first-train").val().trim();
+  var frequency = $("#frequency-train").val().trim();
+
+//  object for holding local data
+  var trainInput = {
+    name: trainName,
+    dest: destination,
+    first: firstTrain,
+    freq: frequency
+  };
+//  .push to 'firebase' database (not local)
+  database.ref().push(trainInput);
+
+//  console info to check
+  console.log(trainInput.name);
+  console.log(trainInput.dest);
+  console.log(trainInput.first);
+  console.log(trainInput.freq);
+
+// confirmation
+  alert("Train info added");
+  
+
+});
