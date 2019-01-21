@@ -9,10 +9,10 @@ var config = {
   firebase.initializeApp(config);
 
 //  Database variable for ease of reference
-  var database = firebase.database();
+  var trainDatabase = firebase.database();
 
 //  Button to add train info
-$("#train-sumbit").on("click", function(event) {
+$("#train-submit").on("click", function(event) {
   event.preventDefault();
 
 //  Varibles to grab user input
@@ -30,7 +30,7 @@ $("#train-sumbit").on("click", function(event) {
     freq: frequency
   };
 //  .push to 'firebase' database (not local)
-  database.ref().push(trainInput);
+trainDatabase.ref().push(trainInput);
 
 //  console info to check
   console.log(trainInput.name);
@@ -40,6 +40,41 @@ $("#train-sumbit").on("click", function(event) {
 
 // confirmation
   alert("Train info added");
-  
+
+  $("#train-name").val("");
+  $("#destination").val("");
+  $("#first-train").val("");
+  $("#frequency-train").val("");
 
 });
+
+trainDatabase.ref().on("child_added", function(childSnapshot, previousKey){
+  console.log(childSnapshot.val());
+
+  var newTrain = childSnapshot.val();
+  var trainName = newTrain.name;
+  var destination = newTrain.dest;
+  var firstTrain = newTrain.first;
+  var frequency = newTrain.freq;
+
+  firstTrain = moment(firstTrain, "HH:mm").subtract(1, "years");
+  // raminder/minutes/next/moment
+  var remainder = moment().diff(moment(firstTrain), "minutes") % frequency;
+  var mins = frequency - remainder;
+  var nextArrival = moment().add(mins, "minutes").format("hh:mm A");
+
+
+  $("tbody").append(
+    $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(destination),
+      $("<td>").text(frequency),
+      $("<td>").text(nextArrival),
+      $("<td>").text(mins)
+
+    ) 
+  );
+
+  
+
+})
