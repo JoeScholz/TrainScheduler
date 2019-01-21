@@ -38,9 +38,6 @@ trainDatabase.ref().push(trainInput);
   console.log(trainInput.first);
   console.log(trainInput.freq);
 
-// confirmation
-  alert("Train info added");
-
   $("#train-name").val("");
   $("#destination").val("");
   $("#first-train").val("");
